@@ -23,6 +23,7 @@ zero = 0;
 
 var buffer = 0;
 var buffer2 = 0;
+var buffer3 = 0;
 var bufferResult = 0;
 var operation = 0;
 
@@ -48,6 +49,9 @@ else {
 }
 
 function clickPlus(){
+  if (bufferResult != 0){
+    buffer = bufferResult;
+  }
   buffer2 = buffer;
   buffer = 0;
   result.innerHTML = `${buffer}`;
@@ -55,6 +59,9 @@ function clickPlus(){
   operation = 1
 }
 function clickMinus(){
+   if (bufferResult != 0){
+    buffer = bufferResult;
+  }
   buffer2 = buffer;
   buffer = 0;
   result.innerHTML = `${buffer}`;
@@ -62,6 +69,9 @@ function clickMinus(){
   operation = 2
 }
 function clickMultiply(){
+  if (bufferResult != 0){
+  buffer = bufferResult;
+  }
   buffer2 = buffer;
   buffer = 0;
   result.innerHTML = `${buffer}`;
@@ -69,6 +79,9 @@ function clickMultiply(){
   operation = 3
 }
 function clickDivide(){
+  if (bufferResult != 0){
+  buffer = bufferResult;
+  }
   buffer2 = buffer;
   buffer = 0;
   result.innerHTML = `${buffer}`;
@@ -76,6 +89,9 @@ function clickDivide(){
   operation = 4
 }
 function clickPercent(){
+  if (bufferResult != 0){
+  buffer = bufferResult;
+  }
   buffer2 = buffer;
   buffer = 0;
   result.innerHTML = `${buffer}`;
@@ -98,23 +114,29 @@ function clickPoint(){
 }
 function resultResult(){
   if (operation ==1) {
+    buffer3 = Number(buffer);
     buffer = Number(buffer);
     buffer2 = Number(buffer2);
     bufferResult = buffer + buffer2;
+    buffer2 = bufferResult;
+    buffer = buffer3;
     if (Number.isInteger(bufferResult) == true) {
     result.innerHTML = `${bufferResult}`;
   }
-
     else {
       result.innerHTML = `${bufferResult.toFixed(5)}`;
   }
 
+    
     secondResult.innerHTML = 0;
   }
   else if (operation ==2) {
+    buffer3 = Number(buffer);
     buffer = Number(buffer);
     buffer2 = Number(buffer2);
     bufferResult = buffer2 - buffer;
+    buffer2 = bufferResult;
+    buffer = buffer3;
     if (Number.isInteger(bufferResult) == true) {
     result.innerHTML = `${bufferResult}`;
   }
@@ -125,9 +147,12 @@ function resultResult(){
     secondResult.innerHTML = 0;
   }
   else if (operation ==3) {
+    buffer3 = Number(buffer);
     buffer = Number(buffer);
     buffer2 = Number(buffer2);
     bufferResult = buffer * buffer2;
+    buffer2 = bufferResult;
+    buffer = buffer3;
     if (Number.isInteger(bufferResult) == true) {
     result.innerHTML = `${bufferResult}`;
   }
@@ -138,9 +163,12 @@ function resultResult(){
     secondResult.innerHTML = 0;
   }
   else if (operation ==4) {
+    buffer3 = Number(buffer);
     buffer = Number(buffer);
     buffer2 = Number(buffer2);
     bufferResult = buffer2 / buffer;
+    buffer2 = bufferResult;
+    buffer = buffer3;
    if (Number.isInteger(bufferResult) == true) {
     result.innerHTML = `${bufferResult}`;
   }
@@ -152,9 +180,12 @@ function resultResult(){
     secondResult.innerHTML = 0;
   }
     else if (operation ==5) {
+    buffer3 = Number(buffer);
     buffer = Number(buffer);
     buffer2 = Number(buffer2);
     bufferResult = buffer2/100;
+    buffer2 = bufferResult;
+    buffer = buffer3;
    if (Number.isInteger(bufferResult) == true) {
     result.innerHTML = `${bufferResult}`;
   }
@@ -166,8 +197,6 @@ function resultResult(){
     secondResult.innerHTML = 0;
   }
 
-  buffer = bufferResult;
-  bufferResult = 0;
 if (result.innerHTML.length > 8 && result.innerHTML.length <=16 ){
   result.style.fontSize = '2rem';
 }
