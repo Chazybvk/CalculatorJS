@@ -37,20 +37,20 @@ else {
 buffer = x;
 }
 result.innerHTML = `${buffer}`;
-if (result.innerHTML.length > 8 && result.innerHTML.length <=16 ){
+if (result.innerHTML.length > 9 && result.innerHTML.length <=13 ){
   result.style.fontSize = '2rem';
 }
-else if (result.innerHTML.length > 16) {
+else if (result.innerHTML.length > 13) {
   clickClean();
 }
 else {
-  result.style.fontSize = '4rem';
+  result.style.fontSize = '3rem';
 }
 }
 
 function clickPlus(){
   if (bufferResult != 0){
-    buffer = bufferResult;
+        buffer = bufferResult;
   }
   buffer2 = buffer;
   buffer = 0;
@@ -60,7 +60,7 @@ function clickPlus(){
 }
 function clickMinus(){
    if (bufferResult != 0){
-    buffer = bufferResult;
+        buffer = bufferResult;
   }
   buffer2 = buffer;
   buffer = 0;
@@ -106,7 +106,7 @@ function clickClean(){
   operation = 0;
   result.innerHTML = `${bufferResult}`;
   secondResult.innerHTML = `${buffer2}`;
-  result.style.fontSize = '4rem';
+  result.style.fontSize = '3rem';
 }
 function clickPoint(){
   buffer = buffer + ".";
@@ -114,97 +114,97 @@ function clickPoint(){
 }
 function resultResult(){
   if (operation ==1) {
-    buffer3 = Number(buffer);
-    buffer = Number(buffer);
-    buffer2 = Number(buffer2);
-    bufferResult = buffer + buffer2;
-    buffer2 = bufferResult;
-    buffer = buffer3;
-    if (Number.isInteger(bufferResult) == true) {
-    result.innerHTML = `${bufferResult}`;
+        buffer3 = Number(buffer);
+        buffer = Number(buffer);
+        buffer2 = Number(buffer2);
+        bufferResult = buffer + buffer2;
+        buffer2 = bufferResult;
+        buffer = buffer3;
+        if (Number.isInteger(bufferResult) == true) {
+        result.innerHTML = `${bufferResult}`;
   }
-    else {
-      result.innerHTML = `${bufferResult.toFixed(5)}`;
+        else {
+          result.innerHTML = `${bufferResult.toFixed(5)}`;
   }
 
-    
-    secondResult.innerHTML = 0;
+
+        secondResult.innerHTML = 0;
   }
   else if (operation ==2) {
-    buffer3 = Number(buffer);
-    buffer = Number(buffer);
-    buffer2 = Number(buffer2);
-    bufferResult = buffer2 - buffer;
-    buffer2 = bufferResult;
-    buffer = buffer3;
-    if (Number.isInteger(bufferResult) == true) {
-    result.innerHTML = `${bufferResult}`;
+        buffer3 = Number(buffer);
+        buffer = Number(buffer);
+        buffer2 = Number(buffer2);
+        bufferResult = buffer2 - buffer;
+        buffer2 = bufferResult;
+        buffer = buffer3;
+        if (Number.isInteger(bufferResult) == true) {
+        result.innerHTML = `${bufferResult}`;
   }
 
-    else {
-      result.innerHTML = `${bufferResult.toFixed(5)}`;
+        else {
+          result.innerHTML = `${bufferResult.toFixed(5)}`;
   }
-    secondResult.innerHTML = 0;
+        secondResult.innerHTML = 0;
   }
   else if (operation ==3) {
-    buffer3 = Number(buffer);
-    buffer = Number(buffer);
-    buffer2 = Number(buffer2);
-    bufferResult = buffer * buffer2;
-    buffer2 = bufferResult;
-    buffer = buffer3;
-    if (Number.isInteger(bufferResult) == true) {
-    result.innerHTML = `${bufferResult}`;
+        buffer3 = Number(buffer);
+        buffer = Number(buffer);
+        buffer2 = Number(buffer2);
+        bufferResult = buffer * buffer2;
+        buffer2 = bufferResult;
+        buffer = buffer3;
+        if (Number.isInteger(bufferResult) == true) {
+        result.innerHTML = `${bufferResult}`;
   }
 
-    else {
-      result.innerHTML = `${bufferResult.toFixed(5)}`;
+        else {
+          result.innerHTML = `${bufferResult.toFixed(5)}`;
   }
-    secondResult.innerHTML = 0;
+        secondResult.innerHTML = 0;
   }
   else if (operation ==4) {
-    buffer3 = Number(buffer);
-    buffer = Number(buffer);
-    buffer2 = Number(buffer2);
-    bufferResult = buffer2 / buffer;
-    buffer2 = bufferResult;
-    buffer = buffer3;
+        buffer3 = Number(buffer);
+        buffer = Number(buffer);
+        buffer2 = Number(buffer2);
+        bufferResult = buffer2 / buffer;
+        buffer2 = bufferResult;
+        buffer = buffer3;
    if (Number.isInteger(bufferResult) == true) {
-    result.innerHTML = `${bufferResult}`;
+        result.innerHTML = `${bufferResult}`;
   }
 
-    else {
-      result.innerHTML = `${bufferResult.toFixed(5)}`;
+        else {
+          result.innerHTML = `${bufferResult.toFixed(5)}`;
   }
 
-    secondResult.innerHTML = 0;
+        secondResult.innerHTML = 0;
   }
-    else if (operation ==5) {
-    buffer3 = Number(buffer);
-    buffer = Number(buffer);
-    buffer2 = Number(buffer2);
-    bufferResult = buffer2/100;
-    buffer2 = bufferResult;
-    buffer = buffer3;
+        else if (operation ==5) {
+        buffer3 = Number(buffer);
+        buffer = Number(buffer);
+        buffer2 = Number(buffer2);
+        bufferResult = buffer2/100;
+        buffer2 = bufferResult;
+        buffer = buffer3;
    if (Number.isInteger(bufferResult) == true) {
-    result.innerHTML = `${bufferResult}`;
+        result.innerHTML = `${bufferResult}`;
   }
 
-    else {
-      result.innerHTML = `${bufferResult.toFixed(5)}`;
-  }
-  
-    secondResult.innerHTML = 0;
+        else {
+          result.innerHTML = `${bufferResult.toFixed(5)}`;
   }
 
-if (result.innerHTML.length > 8 && result.innerHTML.length <=16 ){
+        secondResult.innerHTML = 0;
+  }
+
+if (result.innerHTML.length > 9 && result.innerHTML.length <=13 ){
   result.style.fontSize = '2rem';
 }
-else if (result.innerHTML.length > 16) {
-  result.innerHTML = `Ошибка! Столько цифр я не покажу.`;
+else if (result.innerHTML.length > 13) {
+  result.innerHTML = `Error! To much for this dispay width!`;
 }
 else {
-  result.style.fontSize = '4rem';
+  result.style.fontSize = '3rem';
 }
 
 }
